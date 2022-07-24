@@ -11,9 +11,9 @@ using UnityEngine;
 public class tank_control : MonoBehaviour
 {
     public Rigidbody _rigidbody;
-    /*ÅÚµ¯*/
-    //public GameObject shell;                    //ÅÚµ¯¶ÔÏó
-    //public GameObject shellPos;                 //ÅÚµ¯µÄ·½Ïò
+    /*ç‚®å¼¹*/
+    //public GameObject shell;                    //ç‚®å¼¹å¯¹è±¡
+    //public GameObject shellPos;                 //ç‚®å¼¹çš„æ–¹å‘
 
     private float H_value;
     private float V_valut;
@@ -24,7 +24,7 @@ public class tank_control : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _rigidbody = this.gameObject.GetComponent<Rigidbody>();        //»ñÈ¡×é¼şÊµÀı
+        _rigidbody = this.gameObject.GetComponent<Rigidbody>();        //è·å–ç»„ä»¶å®ä¾‹
         //_shellPos = this.gameObject.GetGameObject<shellPos>();
         //inputHorizontalStr = inputHorizontalStr + (int)tank_type;
         //inputVerticalStr = inputVerticalStr + (int)tank_type;
@@ -37,17 +37,17 @@ public class tank_control : MonoBehaviour
         V_valut = Input.GetAxis("Vertical");
         if (V_valut != 0)
             _rigidbody.MovePosition(this.transform.position + V_valut*this.transform.forward*speed*Time.deltaTime);
-            //this.transform.position = this.transform.position + this.transform.forward * speed * V_valut;           //¿ØÖÆ½ÇÉ«ÔÚ´¹Ö±·½ÏòÉÏÒÆ¶¯
+            //this.transform.position = this.transform.position + this.transform.forward * speed * V_valut;           //æ§åˆ¶è§’è‰²åœ¨å‚ç›´æ–¹å‘ä¸Šç§»åŠ¨
         if (H_value != 0)
         {
             if (V_valut != 0)
                 H_value = -H_value;
-            this.gameObject.transform.Rotate(Vector3.up * H_value *rotate_speed);                                   //¿ØÖÆ½ÇÉ«ÔÚË®Æ½·½ÏòÉÏĞı×ª
+            this.gameObject.transform.Rotate(Vector3.up * H_value *rotate_speed);                                   //æ§åˆ¶è§’è‰²åœ¨æ°´å¹³æ–¹å‘ä¸Šæ—‹è½¬
         }
         //if (Input.GetButtonDown("Fire1"))
            // OpenFire();
     }
-    //¶¨Ê±µ÷ÓÃ
+    //å®šæ—¶è°ƒç”¨
     //private void FixedUpdate()
     //{
 
